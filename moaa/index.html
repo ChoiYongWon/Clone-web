@@ -87,6 +87,13 @@
             
         }
 
+        .container{
+            display: flex;
+            
+            flex-direction: column;
+            align-items: center;
+        }
+
         .main-img-wrap{
             
         }
@@ -208,7 +215,86 @@
             margin-top:1rem;
             text-align: center;
         }
-        
+        .subtitle{
+            font-size: 14px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+        }
+
+        .carousel-wrap{
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+        }
+        .carousel{
+            position:relative;
+            max-width: 1180px;
+            width: 100%;
+            overflow: hidden;
+            margin: 0 3%;
+
+        }
+        .carousel-right{
+            position: absolute;
+            top:48%;
+            right:0;
+            padding: 13px 10px 15px 10px;
+            background-color: rgba(0,0,0,0.2);
+            color: rgba(255,255,255,0.5);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .carousel-left{
+            position: absolute;
+            top:48%;
+            left:0;
+            padding: 13px 10px 15px 10px;
+            background-color: rgba(0,0,0,0.2);
+            color: rgba(255,255,255,0.5);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .carousel-list{
+            width:100%;
+            display: flex;
+            transition: 0.5s;
+        }
+        .carousel-img{
+            width:100%;    
+        }
+        .instagram-img-wrap{
+            width:100%;
+            display: flex;
+            justify-content: center;
+        }
+        .instagram-img-container{
+            display: flex;
+            flex-wrap: wrap;
+            width:100%;
+            max-width: 1200px;
+            margin: 0 3%;
+        }
+        .instagram-img{
+            width:33.33%;
+            height:auto;
+        }
+
+        .mention{
+            color: rgb(62, 89, 57);
+            font-size: 13px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            border: solid 2px rgb(62, 89, 57);
+            
+            background-color: #FFFFFF;
+            padding: 13px 22.75px;
+        }
+
+        .mention:hover{
+            background-color: rgb(62,89,57);
+            color: #FFFFFF;
+        }
         
     </style>
 </head>
@@ -239,53 +325,88 @@
                     </div>
             </div>
         </div>
-        <div class="main-img-wrap">
-            <img src="./img/main.jpg" alt="" class="main-img">
-        </div>
-        <div class="spacing"></div>
-        <div class="item-text-title-wrap">
-            <span class="item-text-title">CONVIVIAL COMPANY PART.2</span>
-            <div class="spacing-min"></div>
-            <span class="item-text-subtitle">2020 SUMMER COLLECTION OPEN</span>
+        <div class="container">
+            <div class="main-img-wrap">
+                <img src="./img/main.jpg" alt="" class="main-img">
+            </div>
             <div class="spacing"></div>
-        </div>
-        <div class="item-container-wrap">
-            <div class="item-container">
-                <div class="item-wrap">
-                    <img src="./img/cloth1.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth2.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth3.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth4.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth5.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth6.jpg" alt="" class="thumb">
-                </div>
-                <div class="item-wrap">
-                    <img src="./img/cloth7.jpg" alt="" class="thumb">
+            <div class="item-text-title-wrap">
+                <span class="item-text-title">CONVIVIAL COMPANY PART.2</span>
+                <div class="spacing-min"></div>
+                <span class="item-text-subtitle">2020 SUMMER COLLECTION OPEN</span>
+                <div class="spacing"></div>
+            </div>
+            <div class="item-container-wrap">
+                <div class="item-container">
+                    <div class="item-wrap">
+                        <img src="./img/cloth1.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth2.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth3.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth4.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth5.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth6.jpg" alt="" class="thumb">
+                    </div>
+                    <div class="item-wrap">
+                        <img src="./img/cloth7.jpg" alt="" class="thumb">
+                    </div>
+                    
+                
                 </div>
                 
-            
+                
+            </div>
+            <div class="spacing"></div>
+                <div class="more-wrap">
+                    
+                </div>
+            <button class="more">MORE</button>
+            <div class="spacing"></div>
+            <span class="subtitle">20 SUMMER COLLECTION LOOKBOOK</span>
+            <div class="spacing-min"></div>
+            <div class="carousel-wrap">
+                <div class="carousel">
+                    <div class="carousel-right">></div>
+                    <div class="carousel-left"><</div>
+                    <div class="carousel-list">
+                        <img src="./img/carousel1.jpg" alt="" class="carousel-img">
+                        <img src="./img/carousel2.jpg" alt="" class="carousel-img">
+                    </div>
+                </div>
             </div>
             
             
+            <div class="spacing"></div>
+            <div class="subtitle">INSTAGRAM</div>
+            <div class="spacing-min"></div>
+            <div class="instagram-img-wrap">
+                <div class="instagram-img-container">
+                    
+                    <img src="./img/insta1.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta2.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta3.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta4.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta5.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta6.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta7.jpg" alt="" class="instagram-img">
+                    <img src="./img/insta8.jpg" alt="" class="instagram-img">
+                </div>
+            </div>
+            <div class="spacing"></div>
+            <button class="mention">@moaa_official</button>
+            <div class="spacing"></div>
         </div>
-        <div class="spacing"></div>
-            <div class="more-wrap">
-                <button class="more">MORE</button>
-            </div>
+
         
-        <div class="spacing"></div>
-        <div class="spacing"></div>
-        <div class="spacing"></div>
         <footer class="footer">
             <div class="footer-icons-wrap">
                 <i class="fab fa-instagram icon-left"></i>
@@ -309,7 +430,14 @@
     </div>
     <script src="https://kit.fontawesome.com/3ace8d1578.js" crossorigin="anonymous"></script>
     <script>
-        
+        window.onload = function(){
+            document.querySelector(".carousel-right").addEventListener("click", ()=>{
+                document.querySelector(".carousel-list").style.marginLeft = "-100%"
+            })
+            document.querySelector(".carousel-left").addEventListener("click", ()=>{
+                document.querySelector(".carousel-list").style.marginLeft = "0"
+            })
+        }
     </script>
 </body>
 </html>
