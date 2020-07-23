@@ -48,26 +48,29 @@
             width: 24%;
             font-family: Arial, Helvetica, sans-serif;
             min-width: 300px;
+            margin: 0 auto;
             
         }
         .center-nav a{
             text-decoration: none;
             color: #222222;
+            
         }
         .left-nav{
             display: flex;
-            flex-direction: row;
+            justify-content: flex-start;
             font-size:17px;
             width: 38%;
-            margin-left: 8%;
+            margin-left: 5%;
             margin-right: 2%;
+            
         }
         .right-nav{
             display: flex;
-            flex-direction: row-reverse;
+            justify-content: flex-end;
             width: 38%;
             font-size: 17px;
-            margin-right:8%;
+            margin-right:5%;
             margin-left: 2%;
         }
         .icon-left{
@@ -82,6 +85,7 @@
             width: 150px;
             height: auto;
         }
+        
         .document-background{
             width:100%;
             
@@ -95,12 +99,35 @@
         }
 
         .main-img-wrap{
+            position:relative;
+            margin-top: 144.3px;
+            width:100%;
+            padding-top : calc(833 / 2500 * 100%);
+            
             
         }
+
+        
         .main-img{
-            margin-top: 144.3px;
+            position: absolute;
+            top:0;
+            left:0;
             width: 99.2vw;
+            transition: opacity 1s ease-out;
+            opacity:0;
         }
+
+        .hide{
+            opacity : 0;
+        }
+
+        .showing{
+            z-index: 1;
+            opacity: 1;
+        }
+        
+        
+
         .spacing{
             width: 50vw;
             margin: 0 auto;
@@ -295,6 +322,47 @@
             background-color: rgb(62,89,57);
             color: #FFFFFF;
         }
+        @media screen and (max-width: 1000px) {
+             .header{
+                padding-left: 10px;
+                padding-right: 10px;
+             }
+        
+        }
+
+        @media screen and (max-width: 768px) {
+             .right-nav{
+                 display: none;
+             }
+             .center-nav{
+                 display: none;
+             }
+             .left-nav{
+                 display: none;
+             }
+             .header{
+                 width: calc(100% - 20px);
+                 padding: 10px 10px;
+                 flex-direction: row;
+                 justify-content: center;
+                 align-items: center;
+                
+
+             }
+             .header-nav{
+                 display: none;
+             }
+             .logo{
+                 width: 120px;
+                 height: auto;
+             }
+             .main-img-wrap{
+                 margin-top: 42.2px;
+             }
+        
+        }
+
+
         
     </style>
 </head>
@@ -304,6 +372,7 @@
         <div class="header-wrap">
             <div class="header">
                 <img src="./img/logo.png" alt="" class="logo">
+                
                     <div class="header-nav">
                         <div class="left-nav">
                             <i class="fab fa-instagram icon-left"></i>
@@ -327,7 +396,11 @@
         </div>
         <div class="container">
             <div class="main-img-wrap">
+                
                 <img src="./img/main.jpg" alt="" class="main-img">
+                <img src="./img/main2.jpg" alt="" class="main-img">
+                
+                
             </div>
             <div class="spacing"></div>
             <div class="item-text-title-wrap">
@@ -430,6 +503,10 @@
     </div>
     <script src="https://kit.fontawesome.com/3ace8d1578.js" crossorigin="anonymous"></script>
     <script>
+        const init = document.querySelector(".main-img:first-child");
+        const SHOWING_CLASS = "showing"
+        const HIDE_CLASS = "hide"
+
         window.onload = function(){
             document.querySelector(".carousel-right").addEventListener("click", ()=>{
                 document.querySelector(".carousel-list").style.marginLeft = "-100%"
@@ -437,6 +514,31 @@
             document.querySelector(".carousel-left").addEventListener("click", ()=>{
                 document.querySelector(".carousel-list").style.marginLeft = "0"
             })
+            slideup();
+            setInterval(slideup, 6000);
+        }
+        
+        var slideup = () =>{
+            const current_slide = document.querySelector(`.${SHOWING_CLASS}`);
+            if(current_slide){
+                const next_slide = current_slide.nextElementSibling;
+                if(next_slide){
+                    current_slide.classList.remove(SHOWING_CLASS);
+                    
+                    next_slide.classList.add(SHOWING_CLASS);
+                   
+                }else{
+                    current_slide.classList.remove(SHOWING_CLASS);
+                    
+                    init.classList.add(SHOWING_CLASS);
+                   
+                }
+                
+                
+            }else{
+                init.classList.add(SHOWING_CLASS);
+            }
+            
         }
     </script>
 </body>
