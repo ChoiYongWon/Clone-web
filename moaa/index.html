@@ -13,6 +13,28 @@
             font-size: 16px;
         }
 
+        .side-background{
+            width:100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            z-index: 2;
+            display: none;
+        }
+
+        .side-nav{
+            position: absolute;
+            display: flex;
+            width: 0;
+            height: 100vh;
+            background-color: #FFFFFF;
+            
+            top: 0;
+            left: 0;
+            z-index: 3;
+            transition: width .2s ease-in-out;
+        }
+
        
         
         .header-wrap{
@@ -32,6 +54,25 @@
             align-items: center;
             flex-direction: column;
             border-bottom: solid 1px #eeeeee;
+            position: relative;
+        }
+
+        .mobile-left-nav{
+            position: absolute;
+            top : 30%;
+            left: 3%;
+            display: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .mobile-right-nav{
+            position: absolute;
+            top : 30%;
+            right: 3%;
+            display: none;
+            font-size: 18px;
+            cursor:pointer;
         }
         
         .header-nav{
@@ -342,7 +383,7 @@
              }
              .header{
                  width: calc(100% - 20px);
-                 padding: 10px 10px;
+                 padding: 16px 10px;
                  flex-direction: row;
                  justify-content: center;
                  align-items: center;
@@ -357,7 +398,21 @@
                  height: auto;
              }
              .main-img-wrap{
-                 margin-top: 42.2px;
+                 margin-top: 54.2px;
+             }
+             .mobile-left-nav{
+                 display: block;
+             }
+             .mobile-right-nav{
+                 display: block;
+             }
+             .instagram-img{
+                 width:100%;
+                 height:auto;
+             }
+             .footer{
+                 padding: 10px 10px;
+                 font-size: 13px;
              }
         
         }
@@ -369,10 +424,20 @@
 <body>
     <div class="document-background">
         
+        <div class="side-background"></div>
         <div class="header-wrap">
             <div class="header">
+                <div class="side-nav">
+                    
+                </div>
                 <img src="./img/logo.png" alt="" class="logo">
-                
+                    <div class="mobile-left-nav">
+                        <i class="fas fa-bars"></i>
+                        
+                    </div>
+                    <div class="mobile-right-nav">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
                     <div class="header-nav">
                         <div class="left-nav">
                             <i class="fab fa-instagram icon-left"></i>
@@ -516,6 +581,19 @@
             })
             slideup();
             setInterval(slideup, 6000);
+
+            document.querySelector(".mobile-left-nav").addEventListener("click", ()=>{
+                document.querySelector(".side-nav").style.width = "80vw"
+                document.querySelector(".side-background").style.display = "block"
+
+                
+
+            })
+            document.querySelector(".side-background").addEventListener("click", ()=>{
+                document.querySelector(".side-nav").style.width = "0"
+                document.querySelector(".side-background").style.display = "none"
+
+            })
         }
         
         var slideup = () =>{
